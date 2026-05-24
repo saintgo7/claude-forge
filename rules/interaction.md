@@ -86,13 +86,15 @@ Before writing code that uses a library/framework, **always query context7 MCP**
 
 ## Web Fetching (CRITICAL)
 
-**NEVER use the built-in WebFetch tool.** Site response delays can freeze the entire session.
+**Prefer non-blocking fetch tools over the built-in WebFetch.** WebFetch can freeze the session on slow sites — use it only as a last resort.
 
-Use MCP-based alternatives instead:
+Use whichever tool is actually available this session (check the live `mcp__*` list first); do not mandate a server that may not be installed:
 
-| Priority | Tool | Use Case |
-|----------|------|----------|
-| 1st | `mcp__jina-reader__*` | Token-efficient, clean markdown output |
-| 2nd | `mcp__fetch__fetch` | Fallback if Jina fails, free |
+| Preference | Tool | Availability | Use Case |
+|------------|------|--------------|----------|
+| 1st | `mcp__jina-reader__*` | if installed | Token-efficient, clean markdown |
+| 2nd | `mcp__fetch__fetch` | if installed | General fetch, free |
+| 3rd | `mcp__web-search-prime__*` / `mcp__zread__*` / `WebSearch` | if installed | Search/read when no fetch MCP is present |
+| last | `WebFetch` | always present | Only when nothing above exists — accept hang risk |
 
-No exceptions — WebFetch is denied in all scenarios.
+For library/framework docs, prefer `context7` (see above) regardless.

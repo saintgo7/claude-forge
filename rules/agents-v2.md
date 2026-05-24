@@ -23,15 +23,15 @@ Located in `~/.claude/agents/`:
 | database-reviewer | PostgreSQL/Supabase DB | opus | Schema, query optimization |
 | verify-agent | Fresh-context verification | sonnet | /handoff-verify subagent |
 
-## Built-in Skills
+## Built-in / Optional Skills
 
-Claude Code includes built-in slash commands that should be used when appropriate:
+These help with common tasks **if available in your environment** (varies by Claude Code version and installed plugins — check the live skill list before relying on them):
 
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `/simplify` | Reduce code complexity | After implementation, during refactoring |
-| `/batch` | Process multiple files/tasks | Repetitive operations across files |
-| `/rc` | Run configuration commands | Project setup, config changes |
+| Skill | Purpose | If unavailable, use |
+|-------|---------|---------------------|
+| `/simplify` | Reduce code complexity | manual simplification pass / `refactor-clean` |
+| `/batch` | Process multiple files/tasks | `bkit:pdca-batch`, or loop over files manually |
+| `/rc` | Run configuration commands | `update-config` skill, or edit settings.json |
 
 ## Immediate Agent Usage
 

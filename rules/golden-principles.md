@@ -88,6 +88,6 @@ When using subagent-driven development: spec compliance first, issues found = no
 | Evidence | "It already works fine" | Claims without evidence are false. Show execution results |
 | SDD | "Skip review, move to next task" | Unreviewed = incomplete. No exceptions |
 | Ralph Loop | "Let me just try one more approach" | Stop. Plan first, then execute once |
-| /simplify | "The complexity is necessary" | Run /simplify. If it finds reduction, it wasn't necessary |
+| Simplicity | "The complexity is necessary" | Do a simplification pass (`/simplify` if available). If it finds reduction, it wasn't necessary |
 | Surgical | "While I'm here, let me clean up" | Only change requested lines. Cleanup is a separate request |
 | Simplicity | "Need abstraction for extensibility" | Only what's needed now. Abstract when repetition hits 3+ times |

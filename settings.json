@@ -6,7 +6,51 @@
   },
   "permissions": {
     "allow": [
-      "Bash(*)",
+      "Bash(git *)",
+      "Bash(npm *)",
+      "Bash(npx *)",
+      "Bash(pnpm *)",
+      "Bash(yarn *)",
+      "Bash(bun *)",
+      "Bash(node *)",
+      "Bash(python3 *)",
+      "Bash(tsc *)",
+      "Bash(tsx *)",
+      "Bash(vitest *)",
+      "Bash(jest *)",
+      "Bash(playwright *)",
+      "Bash(eslint *)",
+      "Bash(prettier *)",
+      "Bash(docker *)",
+      "Bash(docker-compose *)",
+      "Bash(gh *)",
+      "Bash(cargo *)",
+      "Bash(go *)",
+      "Bash(make *)",
+      "Bash(cmake *)",
+      "Bash(gradle *)",
+      "Bash(ls *)",
+      "Bash(ls)",
+      "Bash(cat *)",
+      "Bash(head *)",
+      "Bash(tail *)",
+      "Bash(find *)",
+      "Bash(grep *)",
+      "Bash(rg *)",
+      "Bash(wc *)",
+      "Bash(sort *)",
+      "Bash(mkdir *)",
+      "Bash(cp *)",
+      "Bash(mv *)",
+      "Bash(touch *)",
+      "Bash(pwd)",
+      "Bash(which *)",
+      "Bash(date *)",
+      "Bash(echo *)",
+      "Bash(cd *)",
+      "Bash(chmod +x *)",
+      "Bash(prisma *)",
+      "Bash(flyway *)",
       "Read(*)",
       "Write(*)",
       "Edit(*)",
@@ -33,11 +77,10 @@
       "ListMcpResourcesTool(*)",
       "ReadMcpResourceTool(*)",
       "mcp__context7__*",
-      "mcp__exa__*",
-      "mcp__memory__*",
-      "mcp__github__*",
-      "mcp__fetch__*",
-      "mcp__jina-reader__*"
+      "mcp__claude-in-chrome__*",
+      "mcp__qmd__*",
+      "mcp__pencil",
+      "mcp__playwright__*"
     ],
     "deny": [
       "WebFetch",
@@ -165,10 +208,6 @@
             "type": "command",
             "command": "~/.claude/hooks/output-secret-filter.sh",
             "timeout": 5000
-          },
-          {
-            "type": "command",
-            "command": "~/.claude/skills/continuous-learning-v2/hooks/observe.sh"
           }
         ]
       },
@@ -234,5 +273,31 @@
   "statusLine": {
     "type": "command",
     "command": "~/.claude/cc-chips-custom/engine.sh"
-  }
+  },
+  "enabledPlugins": {
+    "typescript-lsp@claude-plugins-official": true,
+    "telegram@claude-plugins-official": false,
+    "pyright-lsp@claude-plugins-official": true,
+    "bkit@bkit-marketplace": true
+  },
+  "extraKnownMarketplaces": {
+    "bkit-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "popup-studio-ai/bkit-claude-code"
+      }
+    },
+    "claude-plugins-official": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/claude-plugins-official"
+      }
+    }
+  },
+  "effortLevel": "high",
+  "skipDangerousModePermissionPrompt": true,
+  "theme": "dark-daltonized",
+  "remoteControlAtStartup": false,
+  "agentPushNotifEnabled": true,
+  "model": "opus[1m]"
 }
